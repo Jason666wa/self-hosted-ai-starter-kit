@@ -1,0 +1,18 @@
+# Electromagnify SSO override — used by load-and-up.sh
+# docker compose -f docker-compose.yml -f docker-compose.emagy-sso.override.yml up -d
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    volumes:
+      - ./n8n/emagy-sso-hooks.js:/home/node/.n8n/emagy-sso-hooks.js:ro
+    environment:
+      - EXTERNAL_HOOK_FILES=/home/node/.n8n/emagy-sso-hooks.js
+      - N8N_SSO_JWT_SECRET=${N8N_SSO_JWT_SECRET}
+      - N8N_SSO_ISS=${N8N_SSO_ISS:-electromagnify}
+      - N8N_SSO_AUD=${N8N_SSO_AUD:-n8n-editor}
+      - N8N_SSO_DEFAULT_ROLE=${N8N_SSO_DEFAULT_ROLE:-global:member}
+      - N8N_SSO_LANDING_PATH=${N8N_SSO_LANDING_PATH:-/home}
+      - N8N_EDITOR_BASE_URL=${N8N_EDITOR_BASE_URL:-http://10.10.10.223:5678}
+
+  n8n-import:
+    image: n8nio/n8n:latest

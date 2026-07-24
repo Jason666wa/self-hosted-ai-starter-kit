@@ -1,0 +1,9 @@
+# Offline image bundles (very large)
+*.tar
+
+# Runtime secrets (keep .env.example tracked)
+.env
+
+# Local shared uploads / runtime junk
+shared/*
+!shared/.gitkeep
