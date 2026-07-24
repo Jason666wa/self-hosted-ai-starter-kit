@@ -1,1 +1,3 @@
 .env
+production/222/.env
+production/222/*.tar

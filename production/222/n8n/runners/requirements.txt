@@ -1,0 +1,61 @@
+# Data / tables
+numpy
+pandas
+scipy
+pyarrow
+openpyxl
+xlsxwriter
+xlrd
+tabulate
+
+# HTTP / API
+requests
+httpx
+aiohttp
+urllib3
+
+# Parse / formats
+beautifulsoup4
+lxml
+html5lib
+PyYAML
+tomli
+orjson
+ujson
+xmltodict
+python-docx
+pypdf
+chardet
+charset-normalizer
+defusedxml
+
+# Time / utils
+python-dateutil
+pytz
+tzdata
+pendulum
+arrow
+pydantic
+jsonschema
+tenacity
+more-itertools
+toolz
+regex
+jmespath
+furl
+humanize
+
+# Cloud / storage (common automation)
+boto3
+botocore
+
+# Image
+Pillow
+
+# Crypto / encoding helpers
+cryptography
+PyJWT
+bcrypt
+
+# Excel / CSV helpers
+csvkit
