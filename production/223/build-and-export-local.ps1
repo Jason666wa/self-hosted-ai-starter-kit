@@ -22,7 +22,12 @@ $Images = @(
     @{ Image = "n8nio/n8n:latest"; Tar = "n8nio-n8n-latest.tar" },
     @{ Image = "self-hosted-ai-starter-kit/n8n-runners:latest"; Tar = "n8n-runners-latest.tar" },
     @{ Image = "postgres:16-alpine"; Tar = "postgres-16-alpine.tar" },
-    @{ Image = "qdrant/qdrant:latest"; Tar = "qdrant-latest.tar" }
+    @{ Image = "qdrant/qdrant:latest"; Tar = "qdrant-latest.tar" },
+    @{ Image = "ghcr.io/searxng/searxng:latest"; Tar = "searxng-latest.tar" },
+    @{ Image = "ghcr.io/n8n-io/n8n-sandbox-service-api:1.11.0"; Tar = "n8n-sandbox-service-api-1.11.0.tar" },
+    @{ Image = "ghcr.io/n8n-io/n8n-sandbox-service-runner-dind:1.11.0"; Tar = "n8n-sandbox-service-runner-dind-1.11.0.tar" },
+    # Inner Docker of sandbox-runner-1 pulls this on first code run. docker load puts it on the host only.
+    @{ Image = "ghcr.io/n8n-io/n8n-sandbox-service-sandbox:1.11.0"; Tar = "n8n-sandbox-service-sandbox-1.11.0.tar" }
 )
 
 Write-Host "`nExporting $($Images.Count) images into: $ScriptDir" -ForegroundColor Yellow

@@ -44,10 +44,11 @@ if [[ ! -f "$ENV_FILE" ]]; then
   exit 1
 fi
 
-if grep -qE 'CHANGE_ME|^N8N_SSO_JWT_SECRET=\s*$|^POSTGRES_PASSWORD=\s*$|^N8N_ENCRYPTION_KEY=\s*$|^N8N_RUNNERS_AUTH_TOKEN=\s*$' "$ENV_FILE"; then
+if grep -qE 'CHANGE_ME|^N8N_SSO_JWT_SECRET=\s*$|^POSTGRES_PASSWORD=\s*$|^N8N_ENCRYPTION_KEY=\s*$|^N8N_RUNNERS_AUTH_TOKEN=\s*$|^SANDBOX_API_KEYS=\s*$|^N8N_SANDBOX_SERVICE_API_KEY=\s*$|^SANDBOX_API_RUNNER_API_KEY=\s*$|^SANDBOX_RUNNER_API_KEYS=\s*$|^SANDBOX_API_RUNNER_REGISTRATION_TOKEN=\s*$|^SANDBOX_RUNNER_REGISTRATION_TOKEN=\s*$|^N8N_SANDBOX_VERSION=\s*$|^SEARXNG_SECRET=\s*$|^N8N_INSTANCE_AI_SEARXNG_URL=\s*$' "$ENV_FILE"; then
   echo "Error: $ENV_FILE still has empty or placeholder secrets"
   echo "Fill POSTGRES_PASSWORD / N8N_ENCRYPTION_KEY / N8N_USER_MANAGEMENT_JWT_SECRET /"
-  echo "N8N_RUNNERS_AUTH_TOKEN / N8N_SSO_JWT_SECRET (must match electromagnify production .env)."
+  echo "N8N_RUNNERS_AUTH_TOKEN / N8N_SSO_JWT_SECRET (must match electromagnify production .env) /"
+  echo "N8N_SANDBOX_VERSION, the paired SANDBOX_* keys, and SEARXNG_SECRET (see .env.example)."
   exit 1
 fi
 
